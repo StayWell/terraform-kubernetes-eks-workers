@@ -1,7 +1,8 @@
 resource "kubernetes_config_map" "this" {
   metadata {
-    name = "aws-auth"
+    name      = "aws-auth"
     namespace = "kube-system"
+    labels    = "${var.labels}"
   }
 
   data {
